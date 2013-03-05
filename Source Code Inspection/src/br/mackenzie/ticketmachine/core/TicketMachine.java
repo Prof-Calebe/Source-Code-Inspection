@@ -2,6 +2,7 @@ package br.mackenzie.ticketmachine.core;
 
 import br.mackenzie.ticketmachine.exception.PapelMoedaInvalidaException;
 import br.mackenzie.ticketmachine.exception.SaldoInsuficienteException;
+import java.util.Iterator;
 
 /**
  *
@@ -35,7 +36,7 @@ public class TicketMachine {
         return saldo;
     }
 
-    public TrocoIterator getTroco() {
+    public Iterator<Integer> getTroco() {
         return null;
     }
 
