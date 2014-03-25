@@ -1,4 +1,4 @@
-package br.mackenzie.ticketmachine.exception;
+package br.calebe.ticketmachine.exception;
 
 /**
  *

@@ -1,4 +1,4 @@
-package br.mackenzie.ticketmachine.core;
+package br.calebe.ticketmachine.core;
 
 /**
  *

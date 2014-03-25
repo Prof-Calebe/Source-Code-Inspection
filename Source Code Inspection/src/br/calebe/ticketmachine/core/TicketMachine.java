@@ -1,7 +1,7 @@
-package br.mackenzie.ticketmachine.core;
+package br.calebe.ticketmachine.core;
 
-import br.mackenzie.ticketmachine.exception.PapelMoedaInvalidaException;
-import br.mackenzie.ticketmachine.exception.SaldoInsuficienteException;
+import br.calebe.ticketmachine.exception.PapelMoedaInvalidaException;
+import br.calebe.ticketmachine.exception.SaldoInsuficienteException;
 import java.util.Iterator;
 
 /**
