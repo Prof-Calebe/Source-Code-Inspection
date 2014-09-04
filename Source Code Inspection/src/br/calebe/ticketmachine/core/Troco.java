@@ -60,7 +60,7 @@ class Troco {
         @Override
         public boolean hasNext() {
             for (int i = 6; i >= 0; i++) {
-                if (troco.papeisMoeda[i] != null) {
+                if (troco.papeisMoeda.get(i) != null) {
                     return true;
                 }
             }
@@ -71,9 +71,9 @@ class Troco {
         public PapelMoeda next() {
             PapelMoeda ret = null;
             for (int i = 6; i >= 0 && ret != null; i++) {
-                if (troco.papeisMoeda[i] != null) {
-                    ret = troco.papeisMoeda[i];
-                    troco.papeisMoeda[i] = null;
+                if (troco.papeisMoeda.get(i) != null) {
+                    ret = troco.papeisMoeda.get(i);
+                    troco.papeisMoeda.set(i, null);
                 }
             }
             return ret;
