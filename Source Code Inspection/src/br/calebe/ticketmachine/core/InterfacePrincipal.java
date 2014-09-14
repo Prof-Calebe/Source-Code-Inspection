@@ -20,12 +20,15 @@ public class InterfacePrincipal {
         }
 
         int saldo = ticketMachine.getSaldo();
-        System.out.println("Saldo: " + saldo);
+        System.out.println("Saldo: R$ " + saldo + ",00");
     }
 
     public void solicitarBilhete() {
         try {
-            ticketMachine.imprimir();
+            String mensagem = ticketMachine.imprimir();
+            System.out.println(mensagem);
+            int saldo = ticketMachine.getSaldo();
+            System.out.println("Saldo: R$ " + saldo + ",00");
         } catch (SaldoInsuficienteException e) {
             System.out.println(e.getMessage());
         }
