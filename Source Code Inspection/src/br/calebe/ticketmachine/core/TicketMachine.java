@@ -19,17 +19,32 @@ public class TicketMachine {
         this.saldo = 0;
     }
 
-    public void inserir(int quantia) throws PapelMoedaInvalidaException {
-        boolean achou = false;
-        for (int i = 0; i < papelMoeda.length && !achou; i++) {
-            if (papelMoeda[1] == quantia) {
-                achou = true;
+    public void inserir(int amount) throws PapelMoedaInvalidaException {
+        boolean found = false;
+        int note = -1;
+        System.out.println("Aguarde. O sistema está validando as notas.");
+        for (int i = 0; i < papelMoeda.length && !found; i++) {
+            if (papelMoeda[i] == amount) {
+                found = true;
             }
+            note = i;
         }
-        if (!achou) {
+        if (!found) {
+            while (!found) {
+                refund(note);
+                System.out.println("Retire a nota não aceita");
+                if (note == -1) {
+                    found = true;
+                } else {
+                    note = -1;
+                }
+            }
             throw new PapelMoedaInvalidaException();
+        } else {
+            System.out.println("A nota de papel moeda $" + papelMoeda[note] + " foi aceita");
+            this.saldo += amount;
+            System.out.println("O saldo atual é: " + saldo);
         }
-        this.saldo += quantia;
     }
 
     public int getSaldo() {
@@ -49,5 +64,9 @@ public class TicketMachine {
         result += " R$ " + saldo + ",00 *\n";
         result += "**************\n";
         return result;
+    }
+    
+    void refund(int indice){
+        papelMoeda[indice]--;
     }
 }
