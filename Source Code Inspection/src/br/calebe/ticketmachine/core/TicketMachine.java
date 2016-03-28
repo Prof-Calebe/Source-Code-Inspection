@@ -69,4 +69,5 @@ public class TicketMachine {
     void refund(int indice){
         papelMoeda[indice]--;
     }
+    
 }
