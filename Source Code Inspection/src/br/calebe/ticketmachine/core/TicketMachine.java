@@ -32,7 +32,7 @@ public class TicketMachine {
         if (!found) {
             while (!found) {
                 refund(note);
-                System.out.println("Retire a nota não aceita");
+                System.out.println("Retire a nota que não foi aceita.");
                 if (note == -1) {
                     found = true;
                 } else {
