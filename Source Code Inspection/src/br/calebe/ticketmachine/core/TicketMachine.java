@@ -66,8 +66,8 @@ public class TicketMachine {
         return result;
     }
     
-    void refund(int indice){
-        papelMoeda[indice]--;
+    void refund(int i){
+        papelMoeda[i]--;
     }
     
 }
