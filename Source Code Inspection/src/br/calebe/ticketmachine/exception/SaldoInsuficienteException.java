@@ -1,8 +1,13 @@
 package br.calebe.ticketmachine.exception;
 
+
+
 /**
  *
- * @author Calebe de Paula Bianchini
+ * @author Gustavo Dechechi
  */
 public class SaldoInsuficienteException extends Exception {
+    public SaldoInsuficienteException(String message){
+        super(message);
+    }
 }
