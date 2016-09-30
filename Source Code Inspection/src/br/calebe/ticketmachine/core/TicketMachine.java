@@ -12,7 +12,7 @@ public class TicketMachine {
 
     protected int valor;
     protected int saldo;
-    protected int[] papelMoeda = {2, 5, 10, 20, 50, 100};
+    protected double[] papelMoeda = {0.1, 0.25, 0.5, 1,2, 5, 10, 20, 50, 100};
 
     public TicketMachine(int valor) {
         this.valor = valor;
@@ -22,7 +22,7 @@ public class TicketMachine {
     public void inserir(int quantia) throws PapelMoedaInvalidaException {
         boolean achou = false;
         for (int i = 0; i < papelMoeda.length && !achou; i++) {
-            if (papelMoeda[1] == quantia) {
+            if (papelMoeda[i] == quantia) {
                 achou = true;
             }
         }
@@ -36,8 +36,9 @@ public class TicketMachine {
         return saldo;
     }
 
-    public Iterator<Integer> getTroco() {
-        return null;
+    public Iterator<PapelMoeda> getTroco() {
+        Troco troco = new Troco(this.getSaldo());
+        return troco.getIterator();
     }
 
     public String imprimir() throws SaldoInsuficienteException {
