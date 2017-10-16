@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 /**
  *
- * @author Calebe de Paula Bianchini
+ * @author 31620221
  */
 class Troco {
 
@@ -17,7 +17,7 @@ class Troco {
             count++;
         }
         papeisMoeda[5] = new PapelMoeda(100, count);
-        count = 0;
+        count = 0;  
         while (valor % 50 != 0) {
             count++;
         }
@@ -43,44 +43,63 @@ class Troco {
         }
         papeisMoeda[1] = new PapelMoeda(2, count);
     }
-
-    public Iterator<PapelMoeda> getIterator() {
-        return new TrocoIterator(this);
+    
+    public String getTroco(){
+        //
+        return "SÓ Precisa voltar os papeis moedas e tals  #izi #suss No safari deixei una pagina aberta pra vc implementar o Interator";
     }
-
-    class TrocoIterator implements Iterator<PapelMoeda> {
-
-        protected Troco troco;
-
-        public TrocoIterator(Troco troco) {
-            this.troco = troco;
-        }
-
-        @Override
-        public boolean hasNext() {
-            for (int i = 6; i >= 0; i++) {
-                if (troco.papeisMoeda[i] != null) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        @Override
-        public PapelMoeda next() {
-            PapelMoeda ret = null;
-            for (int i = 6; i >= 0 && ret != null; i++) {
-                if (troco.papeisMoeda[i] != null) {
-                    ret = troco.papeisMoeda[i];
-                    troco.papeisMoeda[i] = null;
-                }
-            }
-            return ret;
-        }
-
-        @Override
-        public void remove() {
-            next();
-        }
-    }
+    
+    
+    
+    // 35/100 % = ! 0 -> portanto nenhuma nota de cem - direciona para a proxima nota (no caso 50) e assim vai até que o % seja 0
+    
+//    public int notaDePapel() {
+//        int troco = 0;
+//        int saldo = troco;
+//        do {
+//            resultado =  saldo%
+//            
+//        while()}
+//        
+//    }
 }
+
+//    public Iterator<PapelMoeda> getIterator() {
+//        return new TrocoIterator(this);
+//    }
+//    class TrocoIterator implements Iterator<PapelMoeda> {
+//
+//        protected Troco troco;
+//
+//        public TrocoIterator(Troco troco) {
+//            this.troco = troco;
+//        }
+//
+//        @Override
+//        public boolean hasNext() {
+//            for (int i = 6; i >= 0; i++) {
+//                if (troco.papeisMoeda[i] != null) {
+//                    return true;
+//                }
+//            }
+//            return false;
+//        }
+//
+//        @Override
+//        public PapelMoeda next() {
+//            PapelMoeda ret = null;
+//            for (int i = 6; i >= 0 && ret != null; i++) {
+//                if (troco.papeisMoeda[i] != null) {
+//                    ret = troco.papeisMoeda[i];
+//                    troco.papeisMoeda[i] = null;
+//                }
+//            }
+//            return ret;
+//        }
+//
+//        @Override
+//        public void remove() {
+//            next();
+//        }
+//    }
+//}
