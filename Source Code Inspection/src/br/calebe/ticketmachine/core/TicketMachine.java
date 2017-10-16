@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 /**
  *
- * @author Calebe de Paula Bianchini
+ * @author 31620221
  */
 public class TicketMachine {
 
@@ -28,13 +28,13 @@ public class TicketMachine {
         }
         if (!achou) {
             System.out.println("Não encontrou");
-        }else{
-              this.saldo += quantia;
- 
+        } else {
+            this.saldo += quantia;
+
         }
     }
-    
-    public int getValor(){
+
+    public int getValor() {
         return valor;
     }
 
@@ -49,15 +49,13 @@ public class TicketMachine {
     public String imprimir() throws SaldoInsuficienteException {
         String result = "*****************\n";
         if (saldo < valor) {
-            System.out.println("erro");
-        }
-        else{
-        this.saldo = saldo-valor;   
-       
-        result += "*** R$ " + saldo + ",00 ****\n";
-        result += "*****************\n";
+            return "erro";
+        } else {
+            this.saldo = saldo - valor;
+            result += "*** R$ " + saldo + ",00 ****\n";
+            result += "*****************\n";
+            return result;
         }
         
-        return result;
     }
 }
