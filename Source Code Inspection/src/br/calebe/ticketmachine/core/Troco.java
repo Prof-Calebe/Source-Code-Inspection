@@ -1,6 +1,7 @@
 package br.calebe.ticketmachine.core;
 
 import java.util.Iterator;
+import br.calebe.ticketmachine.core.PapelMoeda;
 
 /**
  *
@@ -8,7 +9,7 @@ import java.util.Iterator;
  */
 class Troco {
 
-    protected PapelMoeda[] papeisMoeda;
+    protected PapelMoeda[] papeisMoeda;  //[erro] inic
 
     public Troco(int valor) {
         papeisMoeda = new PapelMoeda[6];
@@ -41,14 +42,14 @@ class Troco {
         while (valor % 2 != 0) {
             count++;
         }
-        papeisMoeda[1] = new PapelMoeda(2, count);
+        papeisMoeda[0] = new PapelMoeda(2, count); 
     }
 
     public Iterator<PapelMoeda> getIterator() {
         return new TrocoIterator(this);
     }
 
-    class TrocoIterator implements Iterator<PapelMoeda> {
+    class TrocoIterator implements Iterator<PapelMoeda> {  //
 
         protected Troco troco;
 
@@ -58,7 +59,7 @@ class Troco {
 
         @Override
         public boolean hasNext() {
-            for (int i = 6; i >= 0; i++) {
+            for (int i = 6; i >= 0; i++) { 
                 if (troco.papeisMoeda[i] != null) {
                     return true;
                 }
@@ -69,7 +70,7 @@ class Troco {
         @Override
         public PapelMoeda next() {
             PapelMoeda ret = null;
-            for (int i = 6; i >= 0 && ret != null; i++) {
+            for (int i = 6; i >= 0 && ret != null; i++) {  
                 if (troco.papeisMoeda[i] != null) {
                     ret = troco.papeisMoeda[i];
                     troco.papeisMoeda[i] = null;
@@ -79,7 +80,7 @@ class Troco {
         }
 
         @Override
-        public void remove() {
+        public void remove() {  //e
             next();
         }
     }
