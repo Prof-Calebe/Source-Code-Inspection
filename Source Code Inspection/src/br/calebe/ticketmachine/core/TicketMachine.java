@@ -33,7 +33,7 @@ public class TicketMachine {
     }
 
     public int getSaldo() {
-        return saldo;
+        return this.saldo;
     }
 
     public Iterator<Integer> getTroco() {
