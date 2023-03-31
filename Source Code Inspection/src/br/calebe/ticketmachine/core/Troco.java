@@ -10,42 +10,42 @@ class Troco {
 
     protected PapelMoeda[] papeisMoeda;
 
-    public Troco(int valor) {
+    public Troco(int saldo) {
         papeisMoeda = new PapelMoeda[6];
         int count = 0;
-        while (valor >= 100) {
+        while (saldo >= 100) {
             count++;
-            valor -= 100;
+            saldo -= 100;
         }
         papeisMoeda[5] = new PapelMoeda(100, count);
         count = 0;
-        while (valor >= 50) {
+        while (saldo >= 50) {
             count++;
-            valor -= 50;
+            saldo -= 50;
         }
         papeisMoeda[4] = new PapelMoeda(50, count);
         count = 0;
-        while (valor >= 20) {
+        while (saldo >= 20) {
             count++;
-            valor -= 20;
+            saldo -= 20;
         }
         papeisMoeda[3] = new PapelMoeda(20, count);
         count = 0;
-        while (valor >= 10) {
+        while (saldo >= 10) {
             count++;
-            valor -= 10;
+            saldo -= 10;
         }
         papeisMoeda[2] = new PapelMoeda(10, count);
         count = 0;
-        while (valor >= 5) {
+        while (saldo >= 5) {
             count++;
-            valor -= 5;
+            saldo -= 5;
         }
         papeisMoeda[1] = new PapelMoeda(5, count);
         count = 0;
-        while (valor >= 2) {
+        while (saldo >= 2) {
             count++;
-            valor -= 2;
+            saldo -= 2;
         }
         papeisMoeda[0] = new PapelMoeda(2, count);
     }
