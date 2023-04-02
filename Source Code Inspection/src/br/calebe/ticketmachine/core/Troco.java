@@ -22,11 +22,11 @@ class Troco {
             count50++;
         }
         papeisMoeda[4] = new PapelMoeda(50, count50);
-        count = 0;
+        count20 = 0;
         while (valor % 20 != 0) {
-            count++;
+            count20++;
         }
-        papeisMoeda[3] = new PapelMoeda(20, count);
+        papeisMoeda[3] = new PapelMoeda(20, count20);
         count = 0;
         while (valor % 10 != 0) {
             count++;
