@@ -21,7 +21,9 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    # - name: Compile Java
-    #   run: ant compile
+    - name: Build with Ant
+        run: ant -noinput -buildfile build.xml
+    - name: Compile Java
+      run: ant compile
     - name: Run Unit Tests
       run: ant test
