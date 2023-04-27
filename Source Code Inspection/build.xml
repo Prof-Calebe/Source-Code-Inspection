@@ -12,6 +12,7 @@
     <import file="nbproject/build-impl.xml"/>
     
     <!-- Run jUnit -->
+    <!-- Make sure these two libraries are included -->
     <!-- <target name="junit" depends="resolve">
 
         <junit printsummary="yes" haltonfailure="no">
@@ -19,7 +20,6 @@
             <classpath refid="test.path" />
             <classpath location="${build.dir}" />
                             
-            <!-- Make sure these two libraries are included -->
             <classpath location="lib/junit-4.11.jar" />
             <classpath location="lib/hamcrest-core-1.3.jar" />
                 
