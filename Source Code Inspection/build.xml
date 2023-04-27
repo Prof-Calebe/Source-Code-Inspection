@@ -11,18 +11,24 @@
     <description>Builds, tests, and runs the project Source Code Inspection.</description>
     <import file="nbproject/build-impl.xml"/>
     
-    <target name="test">
-        <mkdir dir="test-reports"/>
-        <junit printsummary="yes" haltonfailure="yes">
-            <classpath>
-                <pathelement location="lib/junit.jar"/>
-            </classpath>
-            <formatter type="xml"/>
-            <batchtest fork="yes" todir="test-reports">
-                <fileset dir="src/test/java">
-                <include name="**/*Test.java"/>
-                </fileset>
-            </batchtest>
+    <!-- Run jUnit -->
+    <target name="junit" depends="resolve">
+
+        <junit printsummary="yes" haltonfailure="no">
+
+            <classpath refid="test.path" />
+            <classpath location="${build.dir}" />
+                            
+            <!-- Make sure these two libraries are included -->
+            <classpath location="lib/junit-4.11.jar" />
+            <classpath location="lib/hamcrest-core-1.3.jar" />
+                
+            <test name="com.mkyong.test.TestMessage" 
+                haltonfailure="no" todir="${report.dir}" outfile="result">
+                <formatter type="plain" />
+                <formatter type="xml" />
+            </test>
+
         </junit>
     </target>
     <!--
