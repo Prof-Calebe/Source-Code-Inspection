@@ -23,7 +23,5 @@ jobs:
         distribution: 'temurin'
     - name: Build with Ant
       run: ant -noinput -buildfile ./Source\ Code\ Inspection/build.xml
-    # - name: Compile Java
-    #   run: ant compile
-    # - name: Run Unit Tests
-    #   run: ant test
+    - name: Run Unit Tests
+      run: ant test
