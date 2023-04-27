@@ -1,7 +1,7 @@
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-public class CalculatorTest {
+public class TrocoTest {
   @Test
   public void evaluatesExpression() {
     Troco troco = new Troco();
