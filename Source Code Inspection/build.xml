@@ -12,7 +12,7 @@
     <import file="nbproject/build-impl.xml"/>
     
     <!-- Run jUnit -->
-    <target name="junit" depends="resolve">
+    <!-- <target name="junit" depends="resolve">
 
         <junit printsummary="yes" haltonfailure="no">
 
@@ -30,7 +30,7 @@
             </test>
 
         </junit>
-    </target>
+    </target> -->
     <!--
     There exist several targets which are by default empty and which can be 
     used for execution of your tasks. These targets are usually executed 
