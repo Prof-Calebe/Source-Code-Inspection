@@ -75,7 +75,7 @@ class Troco {
         @Override
         public PapelMoeda next() {
             PapelMoeda ret = null;
-            for (int i = troco.papeisMoeda.length-1; i >= 0 && ret != null; i--) {
+            for (int i = troco.papeisMoeda.length-1; i >= 0 && ret == null; i--) {
                 if (troco.papeisMoeda[i] != null) {
                     ret = troco.papeisMoeda[i];
                     troco.papeisMoeda[i] = null;
